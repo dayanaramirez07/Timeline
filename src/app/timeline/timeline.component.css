@@ -1,0 +1,110 @@
+.container {
+    max-width: 100dvw !important;
+}
+
+.row {
+    max-height: 100dvh !important;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.dates {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+    min-width: max-content;
+    height: 220px;
+}
+
+.dates::before,
+.dates::after {
+    content: '';
+    flex: 1;
+}
+
+.dates:has(.date:last-child)::before {
+    flex: 0;
+}
+
+.dates:has(.date:last-child)::after {
+    flex: 0;
+}
+
+.date {
+    position: relative;
+    display: flex;
+    text-align: center;
+    z-index: 2;
+}
+
+.date::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + (1rem * var(--diff-years)));
+    height: 3px;
+    top: 50%;
+    left: 50%;
+    background-color: black;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.date.last::after {
+    content: '\f054';
+    font-family: 'Font Awesome 6 Free';
+    font-size: 2rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 3rem;
+    margin-right: -0.3rem;
+    color: black;
+}
+
+.date:nth-child(odd) {
+    flex-direction: column-reverse;
+}
+
+.date:nth-child(odd) .btn {
+    transform: translateY(3rem);
+}
+
+.date:nth-child(even) {
+    flex-direction: column;
+}
+
+.date:nth-child(even) .btn {
+    transform: translateY(-3rem);
+}
+
+button {
+    width: 5rem;
+    height: 5rem;
+    margin: auto;
+    border-radius: 50%;
+}
+
+button i {
+    font-size: 2rem;
+}
+
+.circles {
+    position: absolute;
+    box-sizing: border-box;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    left: 50%;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
