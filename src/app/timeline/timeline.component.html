@@ -1,17 +1,26 @@
 <div class="timeline container text-center">
   <div class="row">
-    <div>
+    <div class="title-section">
       <h1>JULIANA VELÁSQUEZ</h1>
+    </div>
+
+    <div class="image-section">
+      <img
+        src="assets/images/juliana.jpg"
+        alt="Juliana Velásquez"
+        class="profile-img"
+      />
     </div>
 
     <div class="dates">
       <div
         class="date"
-        *ngFor="let date of dates; let i = index" 
+        *ngFor="let date of dates; let i = index"
         [style.marginLeft.px]="getMargin(i)"
         [style.--diff-years]="getLineWidth(i)"
-        [ngClass]="{'last': i === dates.length - 1}">
-        <button class="btn btn-sm btn-primary">
+        [ngClass]="{ last: i === dates.length - 1 }"
+      >
+        <button class="btn btn-sm btn-success">
           <i class="fa-solid" [ngClass]="date.icon"></i>
         </button>
         <div class="circles"></div>
