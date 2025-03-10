@@ -1,10 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalComponent } from '../modal/modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css']
 })
@@ -25,6 +29,10 @@ export class TimelineComponent {
     { year: 2024, icon: 'fa-book' },
     { year: 2025, icon: 'fa-compact-disc' }
   ];
+
+  constructor(
+    private _modalService: NgbModal
+  ) { }
 
   public ngOnInit(): void {
     const diferenciaAnnos = this.dates[this.dates.length - 1].year - this.dates[0].year;
@@ -47,6 +55,20 @@ export class TimelineComponent {
     if (index === this.dates.length - 1) return '1';
     const diff = this.dates[index + 1]?.year - this.dates[index]?.year || 1;
     return diff.toString();
+  }
+
+  protected openModal(date: any): void {
+    const modalRef = this._modalService.open(ModalComponent, {
+      centered: true,
+      backdrop: true,
+      size: 'lg'
+    });
+
+    modalRef.componentInstance.title = date.year;
+    modalRef.componentInstance.content = {
+      text: `Información sobre el año ${date.year}`,
+      image: `assets/images/${date.year}.jpg`
+    };
   }
 
 }

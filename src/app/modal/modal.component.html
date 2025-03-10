@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h5 class="modal-title fw-bold">{{ title }}</h5>
+</div>
+
+<div class="modal-body text-center">
+    <p>{{ content.text }}</p>
+    <img *ngIf="content.image" [src]="content.image" alt="Imagen del año" class="img-fluid rounded">
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-dark" (click)="closeModal()">Cerrar</button>
+</div>
