@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "dist/timeline/index.html",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/timeline",
+            "dest": "/dist/timeline/index.html"
+        }
+    ]
+}
