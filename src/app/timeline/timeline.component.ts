@@ -18,16 +18,16 @@ export class TimelineComponent {
   protected margin: number[] = [];
 
   protected dates = [
-    { year: 1998, icon: 'fa-baby-carriage' },
-    { year: 2004, icon: 'fa-child' },
-    { year: 2005, icon: 'fa-dog' },
-    { year: 2012, icon: 'fa-masks-theater' },
-    { year: 2020, icon: 'fa-mountain-sun' },
-    { year: 2021, icon: 'fa-trophy' },
-    { year: 2022, icon: 'fa-2' },
-    { year: 2023, icon: 'fa-water' },
-    { year: 2024, icon: 'fa-book' },
-    { year: 2025, icon: 'fa-compact-disc' }
+    { year: 1998, icon: 'fa-baby-carriage', information: 'Elle est née le 22 février 1998.' },
+    { year: 2004, icon: 'fa-child', information: 'Elle a remporté l\'émission de téléréalité « Angelitos ».' },
+    { year: 2005, icon: 'fa-dog', information: 'Elle a rejoint l\'émission pour enfants « Club 10 ».' },
+    { year: 2014, icon: 'fa-gamepad', information: 'Elle faisait partie du casting de Play Zone.' },
+    { year: 2020, icon: 'fa-mountain-sun', information: 'Elle a repris sa carrière musicale.' },
+    { year: 2021, icon: 'fa-trophy', information: 'Elle a sorti son premier album. Elle a remporté un Latin Grammy.' },
+    { year: 2022, icon: 'fa-2', information: 'Elle a sorti son deuxième album.' },
+    { year: 2023, icon: 'fa-water', information: 'Elle a publié son troisième album.' },
+    { year: 2024, icon: 'fa-book', information: 'Elle a publié son premier livre. Elle a été confirmée comme faisant partie d\'une série.' },
+    { year: 2025, icon: 'fa-compact-disc', information: 'Elle a sorti son quatrième album studio. Elle a annoncé son premier concert au Movistar Arena de Bogota.' },
   ];
 
   constructor(
@@ -64,9 +64,11 @@ export class TimelineComponent {
       size: 'lg'
     });
 
+    const formattedText = date.information.replace(/\. /g, '.\n');
+
     modalRef.componentInstance.title = date.year;
     modalRef.componentInstance.content = {
-      text: `Información sobre el año ${date.year}`,
+      text: formattedText,
       image: `assets/images/${date.year}.jpg`
     };
   }

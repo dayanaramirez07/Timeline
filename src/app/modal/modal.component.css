@@ -1,0 +1,21 @@
+* {
+    background-color: #142611;
+    color: white;
+}
+
+.img-fluid {
+    height: 50dvh;
+    aspect-ratio: 1 / 1;
+    border: 2px solid white;
+    box-shadow: 4px 4px 4px rgba(100, 100, 100, 0.5);
+}
+
+.btn-light {
+    background-color: white;
+    color: black;
+    box-shadow: 3px 3px 3px rgba(100, 100, 100, 0.5);
+}
+
+.btn-light:hover {
+    background-color: #d3d4d5;
+}

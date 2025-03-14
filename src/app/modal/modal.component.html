@@ -3,10 +3,10 @@
 </div>
 
 <div class="modal-body text-center">
-    <p>{{ content.text }}</p>
+    <p class="fw-bold" style="white-space: pre-line;">{{ content.text }}</p>
     <img *ngIf="content.image" [src]="content.image" alt="Imagen del año" class="img-fluid rounded">
 </div>
 
 <div class="modal-footer">
-    <button type="button" class="btn btn-dark" (click)="closeModal()">Cerrar</button>
+    <button type="button" class="btn btn-light fw-bold" (click)="closeModal()">Cerrar</button>
 </div>
