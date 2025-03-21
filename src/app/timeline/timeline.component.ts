@@ -21,7 +21,7 @@ export class TimelineComponent {
     { year: 1998, icon: 'fa-baby-carriage', information: 'Elle est née le 22 février 1998.' },
     { year: 2004, icon: 'fa-child', information: 'Elle a remporté l\'émission de téléréalité « Angelitos ».' },
     { year: 2005, icon: 'fa-dog', information: 'Elle a rejoint l\'émission pour enfants « Club 10 ».' },
-    { year: 2014, icon: 'fa-gamepad', information: 'Elle faisait partie du casting de Play Zone.' },
+    { year: 2014, icon: 'fa-gamepad', information: 'Elle a fait partie du casting de Play Zone.' },
     { year: 2020, icon: 'fa-mountain-sun', information: 'Elle a repris sa carrière musicale.' },
     { year: 2021, icon: 'fa-trophy', information: 'Elle a sorti son premier album. Elle a remporté un Latin Grammy.' },
     { year: 2022, icon: 'fa-2', information: 'Elle a sorti son deuxième album.' },
