@@ -9,6 +9,6 @@ const serverConfig: ApplicationConfig = {
     provideServerRendering(),
     provideServerRouting(serverRoutes)
   ]
-};
+};//comentario
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);
